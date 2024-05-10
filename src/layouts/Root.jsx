@@ -1,12 +1,14 @@
 import React from "react";
 import { Outlet } from "react-router-dom";
+import { Box } from "@mui/material";
+import Navigation from "../components/Navigation";
 
 const Root = () => {
   return (
-    <div>
-      <h1>Navigation</h1>
+    <Box sx={{ display: "flex" }}>
+      <Navigation />
       <Outlet />
-    </div>
+    </Box>
   );
 };
 
