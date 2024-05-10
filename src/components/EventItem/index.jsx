@@ -1,4 +1,5 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import {
   Button,
   Card,
@@ -6,11 +7,20 @@ import {
   CardContent,
   Typography,
 } from "@mui/material";
-import Link from "../UI/Link";
 
 import styles from "./event-item.module.css";
 
 const EventItem = ({ id, title, description, date, organizer }) => {
+  const navigate = useNavigate();
+
+  const handleRegister = () => {
+    navigate(`/events/${id}/registration`);
+  };
+
+  const handleViewParticipants = () => {
+    navigate(`/events/${id}/participants`);
+  };
+
   return (
     <Card>
       <CardContent>
@@ -18,11 +28,11 @@ const EventItem = ({ id, title, description, date, organizer }) => {
         <Typography variant="body2">{description}</Typography>
       </CardContent>
       <CardActions className={styles["card-actions"]}>
-        <Button size="medium">
-          <Link to={`/events/${id}/registration`}>Register</Link>
+        <Button size="medium" onClick={handleRegister}>
+          Register
         </Button>
-        <Button size="medium">
-          <Link to={`/events/${id}/participants`}>View</Link>
+        <Button size="medium" onClick={handleViewParticipants}>
+          View
         </Button>
       </CardActions>
     </Card>

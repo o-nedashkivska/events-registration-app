@@ -1,5 +1,5 @@
 import React from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import {
   Button,
   ButtonGroup,
@@ -15,6 +15,11 @@ const options = ["Social media", "Friends", "Found myself"];
 
 const EventForm = () => {
   const { eventId } = useParams();
+  const navigate = useNavigate();
+
+  const handleCancel = () => {
+    navigate("/events");
+  };
 
   return (
     <Container
@@ -36,7 +41,9 @@ const EventForm = () => {
           />
           <ButtonGroup fullWidth>
             <Button variant="contained">Register</Button>
-            <Button variant="outlined">Cancel</Button>
+            <Button variant="outlined" onClick={handleCancel}>
+              Cancel
+            </Button>
           </ButtonGroup>
         </Stack>
       </Paper>

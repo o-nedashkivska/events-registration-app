@@ -1,10 +1,14 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import { AppBar, Box, Toolbar, Typography } from "@mui/material";
-
-import styles from "./navigation.module.css";
+import { useNavigate } from "react-router-dom";
+import { AppBar, Box, Button, Toolbar, Typography } from "@mui/material";
 
 const Navigation = () => {
+  const navigate = useNavigate();
+
+  const handleViewEvents = () => {
+    navigate("/events");
+  };
+
   return (
     <AppBar component="nav">
       <Toolbar>
@@ -15,9 +19,9 @@ const Navigation = () => {
           Events Registration App
         </Typography>
         <Box>
-          <Link to="/events" className={styles["nav-link"]}>
+          <Button variant="contained" onClick={handleViewEvents}>
             View All Events
-          </Link>
+          </Button>
         </Box>
       </Toolbar>
     </AppBar>
