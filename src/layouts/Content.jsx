@@ -1,12 +1,11 @@
 import React from "react";
 import Box from "@mui/material/Box";
-import { Toolbar, Typography } from "@mui/material";
+import Toolbar from "@mui/material/Toolbar";
 
-const Content = ({ title, children }) => {
+const Content = ({ children }) => {
   return (
     <Box component="main" sx={{ py: 6 }}>
       <Toolbar />
-      <Typography variant="h4">{title}</Typography>
       {children}
     </Box>
   );

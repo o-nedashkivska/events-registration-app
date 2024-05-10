@@ -1,12 +1,12 @@
 import React from "react";
-import { Box, Toolbar, Typography } from "@mui/material";
+import ContentLayout from "../layouts/Content";
+import EventForm from "../components/EventForm";
 
 const Registration = () => {
   return (
-    <Box component="main" sx={{ p: 3 }}>
-      <Toolbar />
-      <Typography>Registration</Typography>
-    </Box>
+    <ContentLayout>
+      <EventForm />
+    </ContentLayout>
   );
 };
 
